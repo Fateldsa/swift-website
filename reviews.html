@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Swift Vendor Store</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary: #8a2be2;
+            --secondary: #4b0082;
+            --dark: #0a0a1a;
+            --light: #f0f0f0;
+            --accent: #9370db;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        
+        .nav a:hover {
+            background: rgba(138, 43, 226, 0.2);
+        }
+        
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .review-card {
+            background: rgba(20, 20, 40, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid var(--primary);
+        }
+        
+        .user-info {
+            flex: 1;
+        }
+        
+        .username {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #00cc66, #00b359);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        .review-content {
+            line-height: 1.6;
+        }
+        
+        .review-date {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        .stats {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.5rem;
+        }
+        
+        .count {
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .reviews-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">SWIFT VENDOR</div>
+            <div class="tagline">What Our Customers Say</div>
+        </header>
+        
+        <div class="nav">
+            <a href="/">Home</a>
+            <a href="/reviews">Reviews</a>
+        </div>
+        
+        <div class="stats">
+            <span class="count">1274</span> Happy Customers & Counting!
+        </div>
+        
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <div class="username">JohnDoe#1234</div>
+                        <div class="badge">Paid</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    Amazing service! The token gen worked perfectly and I got exactly what I paid for. Will definitely purchase again!
+                </div>
+                <div class="review-date">September 12, 2023</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <div class="username">JaneSmith#4567</div>
+                        <div class="badge">Paid</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    The server cloner is incredible! Saved me so much time and effort. Support was helpful when I had questions too.
+                </div>
+                <div class="review-date">September 10, 2023</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://cdn.discordapp.com/embed/avatars/2.png" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <div class="username">MikeJohnson#7890</div>
+                        <div class="badge">Paid</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    Fast delivery and quality product. The Oauth2 boost bot works like a charm. Highly recommend!
+                </div>
+                <div class="review-date">September 8, 2023</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://cdn.discordapp.com/embed/avatars/3.png" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <div class="username">SarahWilliams#0123</div>
+                        <div class="badge">Paid</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    Purchased the lifetime pass for token gen and it's been worth every penny. Constant updates and great functionality.
+                </div>
+                <div class="review-date">September 5, 2023</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://cdn.discordapp.com/embed/avatars/4.png" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <div class="username">AlexBrown#3456</div>
+                        <div class="badge">Paid</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    The token joiner works flawlessly. Setup was easy and the results were exactly as advertised. 5 stars!
+                </div>
+                <div class="review-date">September 3, 2023</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <div class="username">EmilyDavis#6789</div>
+                        <div class="badge">Paid</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    I was hesitant at first but decided to try the month pass. So glad I did! The tools are premium quality and customer support is top-notch.
+                </div>
+                <div class="review-date">August 30, 2023</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Swift Vendor Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#8a2be2" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#9370db",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
